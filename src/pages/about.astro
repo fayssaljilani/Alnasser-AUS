@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: "Quality First",
+    description: "We source only the finest materials and partner with trusted brands to ensure every item meets our high standards.",
+    icon: "🏅",
+  },
+  {
+    title: "Personal Service",
+    description: "Our expert staff provides individual attention, professional fitting, and styling advice to every customer.",
+    icon: "👥",
+  },
+  {
+    title: "Australian Heritage",
+    description: "Proudly Australian owned since 1995, we understand the unique needs of Australian families and lifestyles.",
+    icon: "🇦🇺",
+  },
+  {
+    title: "Community Focus",
+    description: "We're committed to supporting local communities and providing employment opportunities across Australia.",
+    icon: "🤝",
+  },
+];
+
+const timeline = [
+  { year: "1995", event: "BIG N founded in Melbourne with first store in Collins Street" },
+  { year: "1998", event: "Expanded to Sydney with Bondi Junction flagship store" },
+  { year: "2003", event: "Introduced specialized footwear fitting services" },
+  { year: "2008", event: "Launched family sizing specialists and kids' fitting program" },
+  { year: "2015", event: "Opened 20th store and established online presence" },
+  { year: "2020", event: "Introduced click & collect services during pandemic" },
+  { year: "2024", event: "Now serving Australian families across 25+ locations" },
+];
+
+const achievements = [
+  { number: "29", label: "Years Serving Australia" },
+  { number: "25+", label: "Store Locations" },
+  { number: "500K+", label: "Happy Customers" },
+  { number: "150+", label: "Expert Staff Members" },
+];
+---
+
+<Layout title="About Us" description="Learn about BIG N's Australian retail heritage, our commitment to quality fashion and expert service for Australian families.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-primary-50 to-white py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <span class="w-2 h-2 bg-primary-600 rounded-full mr-2"></span>
+          Australian Owned & Operated Since 1995
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
+          About BIG N
+        </h1>
+        <p class="text-xl text-gray-600">
+          Nearly three decades of providing quality clothing and footwear to Australian families, 
+          with the personal service and expertise that makes all the difference.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Story -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Australian Story</h2>
+            <div class="prose prose-lg max-w-none text-gray-600 space-y-4">
+              <p>
+                BIG N began in 1995 with a simple belief: Australian families deserve quality clothing 
+                and footwear backed by expert service and fair prices. What started as a single store 
+                in Melbourne's Collins Street has grown into Australia's trusted retail destination.
+              </p>
+              <p>
+                We've built our reputation on understanding what matters to Australian families - 
+                quality that lasts, styles that work for our climate and lifestyle, and the kind of 
+                personal service that helps you find exactly what you need.
+              </p>
+              <p>
+                Today, with over 25 stores across Australia, we remain committed to the values that 
+                started it all: treating every customer like family, standing behind everything we sell, 
+                and supporting the communities where we live and work.
+              </p>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl shadow-lg overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center text-gray-400">
+                <div class="text-center">
+                  <div class="text-4xl mb-2">🏪</div>
+                  <p class="text-lg">BIG N Store Interior</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+          What We Stand For
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          These values guide everything we do, from the products we choose to the service we provide.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {values.map((value) => (
+          <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-4xl mb-4">{value.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+            <p class="text-gray-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+          Growing with Australia
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Our success is measured by the trust Australian families place in us.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
+        {achievements.map((achievement) => (
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
+              {achievement.number}
+            </div>
+            <div class="text-gray-600 text-sm md:text-base">
+              {achievement.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+          Our Journey
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Key milestones in our growth as Australia's trusted fashion and footwear retailer.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-primary-200"></div>
+          
+          {timeline.map((item, index) => (
+            <div class={`relative flex items-center mb-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <div class="flex-1"></div>
+              
+              <!-- Timeline dot -->
+              <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg"></div>
+              
+              <div class={`flex-1 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} pl-8`}>
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                  <span class="text-primary-600 font-bold text-lg">{item.year}</span>
+                  <p class="text-gray-700 mt-1">{item.event}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Commitment -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 class="text-3xl font-bold mb-4">Supporting Australian Communities</h2>
+              <p class="text-primary-100 mb-6 text-lg">
+                As a proudly Australian company, we're committed to giving back to the communities 
+                that have supported us for nearly three decades.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 mr-3 text-accent-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Local employment opportunities across Australia
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 mr-3 text-accent-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Supporting local schools and sporting clubs
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 mr-3 text-accent-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Partnering with Australian designers and suppliers
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 mr-3 text-accent-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Contributing to local charities and community events
+                </li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <div class="text-6xl mb-4">🇦🇺</div>
+              <p class="text-xl font-semibold">Proudly Australian</p>
+              <p class="text-primary-100">Supporting communities since 1995</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-secondary-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Experience the BIG N Difference
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Visit your nearest BIG N store and discover why Australian families have trusted us for nearly 30 years.
+        </p>
+        <a
+          href="/stores"
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors shadow-lg"
+        >
+          Find Your Local Store
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

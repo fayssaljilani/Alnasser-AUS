@@ -1,0 +1,92 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/stores", label: "Store Locations" },
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between h-16 md:h-20">
+      <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+        <div class="bg-primary-600 text-white px-3 py-2 rounded-lg">
+          <span class="text-2xl font-black">BIG</span>
+        </div>
+        <div class="bg-secondary-800 text-white px-3 py-2 rounded-lg ml-1">
+          <span class="text-2xl font-black">N</span>
+        </div>
+        <div class="ml-3">
+          <span class="text-xl md:text-2xl font-bold text-primary-900">BIG N</span>
+          <p class="text-xs text-gray-600 hidden md:block">Quality Fashion & Footwear</p>
+        </div>
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden p-2 rounded-lg text-primary-600 hover:bg-primary-50 transition-colors"
+        aria-label="Toggle mobile menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden md:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`text-lg font-medium transition-colors hover:text-primary-600 ${
+                currentPath === item.href ? "text-primary-600" : "text-gray-700"
+              }`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile navigation -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <ul class="py-4 space-y-2">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`block px-4 py-2 text-lg font-medium rounded-lg transition-colors hover:bg-primary-50 hover:text-primary-600 ${
+                currentPath === item.href ? "bg-primary-50 text-primary-600" : "text-gray-700"
+              }`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!mobileMenuButton.contains(e.target as Node) && !mobileMenu.contains(e.target as Node)) {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  }
+</script>

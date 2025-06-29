@@ -1,0 +1,126 @@
+---
+const benefits = [
+  {
+    icon: "👥",
+    title: "Expert Personal Service",
+    description: "Our trained staff provide professional fitting advice and styling guidance to help you look and feel your best.",
+  },
+  {
+    icon: "🏅",
+    title: "Quality Guarantee",
+    description: "We stand behind every item we sell with our 30-day comfort guarantee and commitment to premium materials.",
+  },
+  {
+    icon: "🇦🇺",
+    title: "Australian Owned",
+    description: "Supporting local communities since 1995. We understand Australian lifestyle and fashion needs.",
+  },
+  {
+    icon: "✂️",
+    title: "Free Alterations",
+    description: "Professional alteration service included to ensure the perfect fit for all your purchases over $100.",
+  },
+  {
+    icon: "📏",
+    title: "Professional Fitting",
+    description: "Specialized fitting service for footwear and clothing. We measure properly to find your perfect size.",
+  },
+  {
+    icon: "🎯",
+    title: "Try Before You Buy",
+    description: "Touch, feel, and try on everything in-store. See how pieces work together and ensure you love your choices.",
+  },
+];
+
+const stats = [
+  { number: "25+", label: "Store Locations" },
+  { number: "29", label: "Years in Business" },
+  { number: "500K+", label: "Happy Customers" },
+  { number: "99%", label: "Satisfaction Rate" },
+];
+---
+
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Why Choose BIG N?
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Experience the difference that comes from shopping with Australia's most trusted 
+        clothing and footwear retailer. We're more than just a store - we're your local fashion experts.
+      </p>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {benefits.map((benefit) => (
+        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-4xl mb-4">{benefit.icon}</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+          <p class="text-gray-600">{benefit.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Statistics -->
+    <div class="bg-primary-600 rounded-2xl p-8 md:p-12">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+          Trusted by Australian Families
+        </h3>
+        <p class="text-primary-100 text-lg">
+          Our commitment to quality and service has made us Australia's preferred choice for fashion and footwear.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-white mb-2">
+              {stat.number}
+            </div>
+            <div class="text-primary-100 text-sm md:text-base">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Customer Testimonial -->
+    <div class="mt-16 bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 md:p-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="text-4xl mb-6">⭐⭐⭐⭐⭐</div>
+        <blockquote class="text-xl md:text-2xl text-gray-800 mb-6 italic">
+          "BIG N has been our family's go-to for clothing and shoes for over 10 years. 
+          The staff always remember our preferences and sizes, and their fitting service 
+          for the kids is exceptional. You just can't get this level of personal service online."
+        </blockquote>
+        <cite class="text-gray-600 font-medium">
+          — Sarah M., Melbourne Customer since 2014
+        </cite>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">
+        Experience the BIG N Difference
+      </h3>
+      <p class="text-gray-600 mb-6">
+        Visit your nearest store today and discover why Australian families choose BIG N.
+      </p>
+      <a
+        href="/stores"
+        class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors shadow-lg"
+      >
+        Find Your Nearest Store
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

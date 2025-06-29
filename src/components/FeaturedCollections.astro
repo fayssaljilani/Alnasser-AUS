@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import CollectionCard from './CollectionCard.astro';
+
+const allCollections = await getCollection('collections');
+const featuredCollections = allCollections
+  .filter(collection => collection.data.featured)
+  .slice(0, 3);
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Featured Collections
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Discover our most popular collections, carefully curated for quality, style, and comfort. 
+        Visit any BIG N store to see and feel the difference.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {featuredCollections.map((collection) => (
+        <CollectionCard
+          title={collection.data.title}
+          description={collection.data.description}
+          category={collection.data.category}
+          priceRange={collection.data.priceRange}
+          featured={collection.data.featured}
+          href={`/collections/${collection.slug}`}
+          highlights={collection.data.highlights}
+        />
+      ))}
+    </div>
+
+    <!-- Current Offers Banner -->
+    <div class="bg-primary-600 rounded-2xl p-8 text-center text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700"></div>
+      <div class="relative">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">
+          🎉 Autumn Collection Sale - 20% Off
+        </h3>
+        <p class="text-primary-100 mb-6 text-lg">
+          Update your wardrobe for the new season. Limited time offer on selected items.
+        </p>
+        <a
+          href="/offers"
+          class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-600 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
+        >
+          View All Offers
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="/collections"
+        class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 bg-white border-2 border-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
+      >
+        Explore All Collections
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

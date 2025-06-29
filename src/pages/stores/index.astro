@@ -1,0 +1,153 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StoreLocations from '../../components/StoreLocations.astro';
+---
+
+<Layout title="Our Stores" description="Find your nearest BIG N store in Melbourne. Visit us for expert fitting service, quality fashion and footwear for the whole family.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-primary-50 to-white py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <span class="w-2 h-2 bg-primary-600 rounded-full mr-2"></span>
+          3 Convenient Melbourne Locations
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
+          Find Your Nearest BIG N Store
+        </h1>
+        <p class="text-xl text-gray-600">
+          Experience personal service, expert fitting, and quality fashion at any of our 
+          Melbourne locations. Each store is staffed with friendly experts ready to help 
+          you find exactly what you need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Locations -->
+  <StoreLocations />
+
+  <!-- Why Visit In Store -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+          Why Visit BIG N In Store?
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl mb-4">📏</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Professional Fitting Service</h3>
+            <p class="text-gray-600">
+              Our trained specialists measure and fit properly, ensuring comfort and the 
+              perfect fit every time. Especially important for growing children and work footwear.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl mb-4">🤝</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Personal Shopping Experience</h3>
+            <p class="text-gray-600">
+              Our staff get to know your preferences and can suggest items that suit your 
+              style, budget, and lifestyle. It's like having your own fashion consultant.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl mb-4">👚</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Try Before You Buy</h3>
+            <p class="text-gray-600">
+              See how clothes look and feel, check the quality of materials, and ensure 
+              colors match your existing wardrobe. No surprises when you get home.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Immediate Satisfaction</h3>
+            <p class="text-gray-600">
+              Take your purchases home immediately - no waiting for delivery. Perfect for 
+              last-minute needs or when you find that perfect item.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Services -->
+  <section class="py-16 bg-secondary-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+          Services Available at All Stores
+        </h2>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900">Free Alterations</h4>
+                <p class="text-sm text-gray-600">On purchases over $100</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900">Gift Cards</h4>
+                <p class="text-sm text-gray-600">Perfect for any occasion</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900">Loyalty Program</h4>
+                <p class="text-sm text-gray-600">Earn points on every purchase</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900">Click & Collect</h4>
+                <p class="text-sm text-gray-600">Order online, pick up in store</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900">Style Consultations</h4>
+                <p class="text-sm text-gray-600">Free personal styling advice</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900">Special Orders</h4>
+                <p class="text-sm text-gray-600">Can't find your size? We'll order it</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

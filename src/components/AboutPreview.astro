@@ -1,0 +1,51 @@
+---
+const stats = [
+  { number: "38+", label: "Years of Excellence" },
+  { number: "50+", label: "Global Partners" },
+  { number: "1000+", label: "Successful Projects" },
+  { number: "25+", label: "Countries Served" },
+];
+---
+
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-6">
+          Building Bridges Across Global Markets
+        </h2>
+        <p class="text-lg text-gray-600 mb-6">
+          Since 1985, Al Nasser Trading has been at the forefront of international trade, 
+          connecting businesses and facilitating seamless import-export operations across continents.
+        </p>
+        <p class="text-lg text-gray-600 mb-8">
+          Our expertise spans multiple industries including construction materials, agriculture, 
+          technology, and consumer goods. We pride ourselves on our reliability, efficiency, 
+          and commitment to fostering long-term partnerships.
+        </p>
+        <a
+          href="/about"
+          class="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors"
+        >
+          Learn More About Us
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-6">
+        {stats.map((stat) => (
+          <div class="bg-primary-50 rounded-lg p-6 text-center">
+            <div class="text-3xl md:text-4xl font-bold text-primary-600 mb-2">
+              {stat.number}
+            </div>
+            <div class="text-sm md:text-base text-gray-700">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const stores = await getCollection('stores');
+
+const contactInfo = [
+  {
+    icon: "📧",
+    title: "Email",
+    details: ["info@bign.com.au", "customerservice@bign.com.au"],
+  },
+  {
+    icon: "📞",
+    title: "Customer Service",
+    details: ["1300 BIG AUS (1300 244 287)", "Available 7 days a week"],
+  },
+  {
+    icon: "🕐",
+    title: "General Hours",
+    details: ["Monday - Friday: 9:00 AM - 5:30 PM", "Saturday: 9:00 AM - 5:00 PM", "Sunday: 10:00 AM - 5:00 PM"],
+  },
+];
+---
+
+<Layout title="Contact" description="Get in touch with BIG N. Visit our Melbourne stores or contact us for fashion advice, store information, or customer service.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-primary-50 to-white py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
+          Get in Touch
+        </h1>
+        <p class="text-xl text-gray-600">
+          Questions about our products? Need fitting advice? Want to know more about our stores? 
+          We're here to help you find exactly what you need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Methods -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">How to Reach Us</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {contactInfo.map((info) => (
+            <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+              <div class="text-4xl mb-4">{info.icon}</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{info.title}</h3>
+              {info.details.map((detail) => (
+                <p class="text-gray-600 mb-1">{detail}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <!-- Quick Contact Options -->
+        <div class="bg-primary-600 rounded-2xl p-8 text-center text-white">
+          <h3 class="text-2xl font-bold mb-4">Need Immediate Help?</h3>
+          <p class="text-primary-100 mb-6">
+            Our customer service team is ready to assist with any questions about products, 
+            sizing, store locations, or services.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:1300244287"
+              class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              Call 1300 BIG AUS
+            </a>
+            <a
+              href="mailto:info@bign.com.au"
+              class="inline-flex items-center justify-center px-6 py-3 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Locations -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Visit Our Stores</h2>
+          <p class="text-lg text-gray-600">
+            The best way to experience BIG N is in person. Visit any of our Melbourne locations 
+            for expert fitting, personal service, and the full range of our collections.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {stores.map((store) => (
+            <div class="bg-white rounded-xl p-6 shadow-md">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{store.data.name}</h3>
+              <div class="space-y-3 mb-6">
+                <div class="flex items-start space-x-2">
+                  <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                  <div>
+                    <p class="font-medium text-gray-700">{store.data.shopNumber}</p>
+                    <p class="text-sm text-gray-600">{store.data.address}</p>
+                  </div>
+                </div>
+                
+                {store.data.phone && (
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <a href={`tel:${store.data.phone.replace(/\s/g, '')}`} class="text-primary-600 hover:text-primary-700 text-sm">
+                      {store.data.phone}
+                    </a>
+                  </div>
+                )}
+                
+                <div class="flex items-center space-x-2">
+                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-sm text-gray-600">
+                    {store.data.hours[new Date().toLocaleDateString('en', {weekday: 'long'}).toLowerCase()]}
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex gap-2">
+                <a
+                  href={`/stores/${store.slug}`}
+                  class="flex-1 bg-primary-600 text-white py-2 px-3 rounded-lg text-sm font-medium text-center hover:bg-primary-700 transition-colors"
+                >
+                  Store Details
+                </a>
+                <a
+                  href={store.data.googleMapsUrl || `https://maps.google.com/?q=${encodeURIComponent(store.data.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 bg-white text-primary-600 border border-primary-600 py-2 px-3 rounded-lg text-sm font-medium text-center hover:bg-primary-50 transition-colors"
+                >
+                  Directions
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you offer fitting services?</h3>
+            <p class="text-gray-600">
+              Yes! All our stores have trained fitting specialists who can help you find the perfect size for both clothing and footwear. 
+              This service is complimentary for all customers.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What are your alteration services?</h3>
+            <p class="text-gray-600">
+              We provide free professional alterations on purchases over $100. This includes hemming, taking in or letting out garments, 
+              and other adjustments to ensure the perfect fit.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you have a loyalty program?</h3>
+            <p class="text-gray-600">
+              Absolutely! Join our BIG N Rewards program in-store to earn points on every purchase, receive exclusive member discounts, 
+              and get early access to sales and new collections.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-md">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I return or exchange items?</h3>
+            <p class="text-gray-600">
+              Yes, we offer a 30-day return and exchange policy on all items with receipt. Items must be in original condition 
+              with tags attached. Our staff will be happy to help you find a better fit or alternative.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,11 +1,14 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import RetailHero from '../components/RetailHero.astro';
+import FeaturedCollections from '../components/FeaturedCollections.astro';
+import HomepageStores from '../components/HomepageStores.astro';
+import WhyShopBigN from '../components/WhyShopBigN.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home" description="BIG N - Quality clothing and footwear for Australian families. Your local fashion destination with expert fitting service.">
+	<RetailHero />
+	<FeaturedCollections />
+	<HomepageStores />
+	<WhyShopBigN />
 </Layout>
